@@ -1,0 +1,6 @@
+@ProPlan.WebApi_HostAddress = http://localhost:5226
+
+GET {{ProPlan.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
