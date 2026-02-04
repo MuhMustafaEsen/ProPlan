@@ -44,12 +44,27 @@ namespace ProPlan.WebApi.Extensions
         }
         public static void CrossOriginConfigure(this IServiceCollection services)
         {
+            /*
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
+            });
+            */
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    builder => builder
+                        .WithOrigins(
+                            "http://proplanbusiness.com",
+                            "https://proplanbusiness.com"
+                        )
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                );
             });
         }
         public static void ConfigureLoggerService(this IServiceCollection services)
