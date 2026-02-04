@@ -79,7 +79,7 @@ if (app.Environment.IsDevelopment())
 //https e yönlendirmemek için kapattýk.
 //app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 app.UseAuthentication();//önce Authentication sýrayý bozma
 app.UseAuthorization();
